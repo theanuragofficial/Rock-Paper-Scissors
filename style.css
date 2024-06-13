@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(246, 246, 235);
+}
+.container {
+  background: #fff;
+  padding: 2rem 7rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.container.start .user-result {
+  animation: userShake 0.7s ease infinite;
+}
+@keyframes userShake {
+  50% {
+    transform: translateY(10px);
+  }
+}
+.container.start .cpu-result {
+  animation: userShake 0.7s ease infinite;
+}
+@keyframes cpuShake {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.result-icons {
+  display: flex;
+  column-gap: 7rem;
+}
+.result-icons i {
+  width: 100%;
+  font-size: 8rem;
+}
+.user-result i {
+  transform: rotate(90deg);
+}
+.cpu-result i {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+.result {
+  text-align: center;
+  font-size: 2rem;
+  color: #000;
+  margin-top: 1.5rem;
+}
+.option-icon i {
+  width: 50px;
+  font-size: 5rem;
+}
+.option-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-between;
+}
+
+.container.start .option-icons {
+  pointer-events: none;
+}
+.option-icons:hover {
+  opacity: 1;
+}
+.option-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+.option-icon:hover {
+  opacity: 1;
+}
+.option-icon.active {
+  opacity: 1;
+}
+.option-icon i {
+  pointer-events: none;
+}
+.option-icon p {
+  color: #000;
+  font-size: 1.234rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
